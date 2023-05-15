@@ -2,6 +2,7 @@ import React from 'react';
 import { Counter } from './Counter/Counter';
 import { Header } from './Header/Header';
 import { Modal } from './Modal/Modal';
+import { ToDoList } from './Todo/ToDoList';
 
 export class App extends React.Component {
   state = {
@@ -12,10 +13,6 @@ export class App extends React.Component {
     this.setState({ isShowModal: true });
   };
   closeModal = () => {
-    // if (evt.code === 'Escape') {
-    //   this.setState({ isShowModal: false });
-    // }
-
     this.setState({ isShowModal: false });
   };
 
@@ -37,6 +34,8 @@ export class App extends React.Component {
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>Some</Modal>
         )}
+
+        <ToDoList />
 
         <h1>State of component</h1>
 
