@@ -4,6 +4,7 @@ import { Header } from './Header/Header';
 import { Modal } from './Modal/Modal';
 import { ToDoList } from './Todo/ToDoList';
 import { FormLogin } from './FormLogin/FormLogin';
+import { nanoid } from 'nanoid';
 
 export class App extends React.Component {
   state = {
@@ -15,6 +16,14 @@ export class App extends React.Component {
   };
   closeModal = () => {
     this.setState({ isShowModal: false });
+  };
+
+  createUser = data => {
+    const newUser = {
+      ...data,
+      id: nanoid(),
+    };
+    console.log(newUser);
   };
 
   render() {
@@ -34,7 +43,10 @@ export class App extends React.Component {
 
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>
-            <FormLogin />
+            <FormLogin
+              createUser={this.createUser}
+              closeModal={this.closeModal}
+            />
           </Modal>
         )}
 

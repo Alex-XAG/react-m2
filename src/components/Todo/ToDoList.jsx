@@ -2,7 +2,6 @@ import React from 'react';
 import { ToDo } from './ToDo';
 import todoList from '../../todo.json';
 
-console.log({ ...todoList[0] });
 export class ToDoList extends React.Component {
   state = {
     todoList: todoList,
