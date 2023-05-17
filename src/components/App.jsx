@@ -3,6 +3,7 @@ import { Counter } from './Counter/Counter';
 import { Header } from './Header/Header';
 import { Modal } from './Modal/Modal';
 import { ToDoList } from './Todo/ToDoList';
+import { FormLogin } from './FormLogin/FormLogin';
 
 export class App extends React.Component {
   state = {
@@ -32,7 +33,9 @@ export class App extends React.Component {
         <Header showModal={this.showModal} />
 
         {this.state.isShowModal && (
-          <Modal closeModal={this.closeModal}>Some</Modal>
+          <Modal closeModal={this.closeModal}>
+            <FormLogin />
+          </Modal>
         )}
 
         <ToDoList />

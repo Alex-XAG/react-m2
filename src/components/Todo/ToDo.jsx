@@ -20,7 +20,6 @@ export const ToDo = ({ todo, hadleCheckCompleted, handleDelete }) => {
             aria-label="Close"
             onClick={() => handleDelete(todo.id)}
           >
-            Close
           </button>
         </div>
       </div>

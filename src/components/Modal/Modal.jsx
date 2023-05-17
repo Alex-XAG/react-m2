@@ -21,9 +21,7 @@ export const Modal = ({ children, closeModal }) => {
               className="btn-close"
               aria-label="Close"
               onClick={closeModal}
-            >
-              Close
-            </ModalBtnClose>
+            ></ModalBtnClose>
           </ModalHeader>
           <div className="modal-body">{children}</div>
         </div>
