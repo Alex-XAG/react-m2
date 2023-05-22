@@ -22,6 +22,7 @@ export class FormLogin extends React.Component {
     this.props.createUser({
       email: this.state.email,
       password: this.state.password,
+      gender: this.state.gender,
     });
     this.setState({ email: '', password: '' });
     this.props.closeModal();
@@ -36,7 +37,6 @@ export class FormLogin extends React.Component {
   };
 
   handleRadio = ({ target }) => {
-    console.log(target.value);
     this.setState({ gender: target.value });
   };
 
@@ -57,7 +57,7 @@ export class FormLogin extends React.Component {
             value={this.state.email}
           />
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+            We will never share your email with anyone else.
           </div>
         </div>
         <div className="mb-3">
@@ -91,7 +91,7 @@ export class FormLogin extends React.Component {
             type="radio"
             name="flexRadioDefault"
             id="flexRadioDefault1"
-            checked={this.state.gender}
+            checked={this.state.gender === 'male'}
             onChange={this.handleRadio}
             value="male"
           />
@@ -105,7 +105,7 @@ export class FormLogin extends React.Component {
             type="radio"
             name="flexRadioDefault"
             id="flexRadioDefault2"
-            checked={this.state.gender}
+            checked={this.state.gender === 'female'}
             onChange={this.handleRadio}
             value="female"
           />
